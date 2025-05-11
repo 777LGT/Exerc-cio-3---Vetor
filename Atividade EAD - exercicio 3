@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int numero, i;
+    int vetor[5] = {0};
+
+    printf("Digite um numero entre 0 e 99999: ");
+    scanf("%d", &numero);
+
+    if (numero < 0 || numero > 99999) {
+        printf("numero fora do intervalo permitido\n");
+        return 1;
+    }
+     i = 4;
+     while (numero > 0) {
+        vetor[i] = numero % 10;
+        numero /= 10;
+        i--;
+     }
+
+     printf("vetor com os digitos: {");
+     for (i = 0; i < 5; i++) {
+        printf("%d", vetor[i]);
+        if (i < 4) printf(", ");
+     }
+     printf("}\n");
+    return 0;
+}
